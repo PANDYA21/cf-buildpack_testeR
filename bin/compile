@@ -84,9 +84,11 @@ echo "Downloading and unpacking R binaries ($R_BINARIES)" | indent
 curl $R_BINARIES -s -o - | tar xzf - -C $BUILD_DIR
 
 # checkig the downloaded folder structure
-echo "printing the folder structure"
+# echo "printing the folder structure"
 # ls
-find .
+# find .
+echo "moving everything from the folder R-3.2.0-binaries-20150719-0018"
+mv ./app/R-3.2.0-binaries-20150719-0018/* ./app/
 
 # also using buildpack-apt?
 echo "checking for first if"
