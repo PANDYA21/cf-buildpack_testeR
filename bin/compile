@@ -16,6 +16,7 @@ cd ..
 rm -f R Rscript
 ln -s R-3.2.1/bin/R R
 ln -s R-3.2.1/bin/Rscript Rscript
+echo "R successfully installed" | indent
 ###
 
 
