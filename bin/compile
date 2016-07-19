@@ -6,8 +6,6 @@ echo "by RAW21...."
 
 
 ### another way
-mkdir /usr/local/src/R
-cd /usr/local/src/R
 curl -O http://cran.utstat.utoronto.ca/src/base/R-3/R-3.2.1.tar.gz
 tar xzvf R-3.2.1.tar.gz
 cd R-3.2.1
