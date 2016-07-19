@@ -83,7 +83,7 @@ curl $R_BINARIES -s -o - | tar xzf - -C .
 
 ls
 cd R-3.3.1
-./configure
+# ./configure
 ./INSTALL
 
 # # also using buildpack-apt?
