@@ -81,6 +81,7 @@ echo "Vendoring R 3.3.1" | indent
 echo "Downloading and unpacking R binaries ($R_BINARIES)" | indent
 curl $R_BINARIES -s -o - | tar xzf - -C $BUILD_DIR
 
+ls
 cd R-3.3.1
 ./configure
 ./INSTALL
