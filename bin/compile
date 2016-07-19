@@ -88,7 +88,7 @@ R_VERSION="3.2.0" #"3.2.1"
 
 # S3_BUCKET="heroku-buildpack-r"
 # R_BINARIES="https://cran.r-project.org/src/base/R-3/R-3.3.1.tar.gz" # hard coded :X
-R_BINARIES="https://github.com/RAW21/R_binary/blob/master/R-3.2.0-binaries-20150719-0018.tar.gz?raw=true"
+R_BINARIES="https://raw.githubusercontent.com/RAW21/R_binary/master/R-3.2.0-binaries-20150719-0018.tar.gz"
 
 VENDOR_DIR="$BUILD_DIR/vendor"
 CRAN_MIRROR="http://cran.revolutionanalytics.com"
