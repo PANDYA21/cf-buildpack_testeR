@@ -26,6 +26,8 @@ echo "by RAW21...."
 # echo "R should be here..."
 # ###
 
+
+###
 # fail fast
 set -e
 
@@ -84,10 +86,10 @@ R_VERSION="3.2.0" #"3.2.1"
 # else
 #   BUILD_PACK_VERSION="20151119-2338" # "20160322-0811"
 # fi
-# BUILD_PACK_VERSION="20150719-0018" #"20151119-2338"
+BUILD_PACK_VERSION="20150719-0018" #"20151119-2338"
 
-# S3_BUCKET="heroku-buildpack-r"
-# R_BINARIES="https://cran.r-project.org/src/base/R-3/R-3.3.1.tar.gz" # hard coded :X
+S3_BUCKET="heroku-buildpack-r"
+# R_BINARIES="http://${S3_BUCKET}.s3.amazonaws.com/${STACK}/R-${R_VERSION}-binaries-${BUILD_PACK_VERSION}.tar.gz"
 R_BINARIES="https://raw.githubusercontent.com/RAW21/R_binary/master/R-3.2.0-binaries-20150719-0018.tar.gz"
 
 VENDOR_DIR="$BUILD_DIR/vendor"
@@ -97,12 +99,11 @@ mkdir -p $CACHE_DIR
 
 # # vendor R into the slug
 # echo "Vendoring R $R_VERSION for $STACK stack ($BUILD_PACK_VERSION)" | indent
-echo "Vendoring R 3.2.0" | indent
+echo "Vendoring R $R_VERSION ($BUILD_PACK_VERSION)" | indent
 
 # download and unpack binaries
 echo "Downloading and unpacking R binaries ($R_BINARIES)" | indent
-curl $R_BINARIES -s -o - | tar xzf - -C .
-
+curl $R_BINARIES -s -o - | tar xzf - -C $BUILD_DIR
 
 # also using buildpack-apt?
 if [ -d $BUILD_DIR/.apt ]; then
@@ -151,8 +152,8 @@ RPROG
 
 echo "R $R_VERSION successfully installed" | indent
 
-# # need to copy binaries back so that any
-# # installed packages are included in the slug
-# rm -rf $VENDOR_DIR/R
-# mkdir -p $VENDOR_DIR/R
-# cp -R /app/vendor/R/* $VENDOR_DIR/R
+# need to copy binaries back so that any
+# installed packages are included in the slug
+rm -rf $VENDOR_DIR/R
+mkdir -p $VENDOR_DIR/R
+cp -R /app/vendor/R/* $VENDOR_DIR/R
