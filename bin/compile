@@ -5,20 +5,26 @@ echo "Compilation of R buildpack..."
 echo "by RAW21...."
 
 
-### another way
-curl -O http://cran.utstat.utoronto.ca/src/base/R-3/R-3.2.1.tar.gz
-tar xzvf R-3.2.1.tar.gz
-cd R-3.2.1
-./configure
-make
-make check
-cd ..
-rm -f R Rscript
-ln -s R-3.2.1/bin/R R
-ln -s R-3.2.1/bin/Rscript Rscript
-echo "R successfully installed" | indent
-###
+# ### another way
+# curl -O http://cran.utstat.utoronto.ca/src/base/R-3/R-3.2.1.tar.gz
+# tar xzvf R-3.2.1.tar.gz
+# cd R-3.2.1
+# ./configure
+# make
+# make check
+# cd ..
+# rm -f R Rscript
+# ln -s R-3.2.1/bin/R R
+# ln -s R-3.2.1/bin/Rscript Rscript
+# echo "R successfully installed" | indent
+# ###
 
+
+### an another way
+curl -O https://github.com/nafiux/portableR/tarball/master | tar xzvf - -C .
+ls
+echo "R should be here..."
+###
 
 # # fail fast
 # set -e
