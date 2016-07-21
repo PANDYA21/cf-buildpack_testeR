@@ -130,15 +130,15 @@ touch /app/vendor/R/lib64/R/doc/html/R.css
 # install dependencies from CRAN
 echo "... Executing init.r script ..." | indent
 
-# # set the CRAN mirror and run the init.r program
-# /app/vendor/R/bin/R -s <<RPROG > indent
-#   Sys.setenv(BUILD_DIR="$BUILD_DIR")
-#   setwd("$BUILD_DIR")
-#   r <- getOption("repos");
-#   r["CRAN"] <- "$CRAN_MIRROR";
-#   options(repos=r);
-#   `cat $BUILD_DIR/init.r`
-# RPROG
+# set the CRAN mirror and run the init.r program
+/app/vendor/R/bin/R -s <<RPROG > indent
+  Sys.setenv(BUILD_DIR="$BUILD_DIR")
+  setwd("$BUILD_DIR")
+  r <- getOption("repos");
+  r["CRAN"] <- "$CRAN_MIRROR";
+  options(repos=r);
+  `cat app/init.r`
+RPROG
 
 # ## check
 # echo "ls here"
@@ -152,7 +152,7 @@ echo "... Executing init.r script ..." | indent
 # echo "ls tmp/"
 # ls tmp/
 
-/app/vendor/R/bin/R -f 'app/init.r'
+# /app/vendor/R/bin/R -f 'app/init.r'
 
 echo "R $R_VERSION successfully installed" | indent
 
