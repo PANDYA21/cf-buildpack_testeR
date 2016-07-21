@@ -139,6 +139,7 @@ echo "... Executing init.r script ..." | indent
 #   options(repos=r);
 #   `cat $BUILD_DIR/init.r`
 # RPROG
+ls
 /app/vendor/R/bin/R -f './init.r'
 
 echo "R $R_VERSION successfully installed" | indent
