@@ -68,7 +68,8 @@ GCC_VERSION=4.8
 R_VERSION="3.2.0" #"3.2.1"
 BUILD_PACK_VERSION="20150719-0018" #"20151119-2338"
 
-R_BINARIES="https://raw.githubusercontent.com/RAW21/R_binary/master/R-3.2.0-binaries-20150719-0018.tar.gz"
+# R_BINARIES="https://raw.githubusercontent.com/RAW21/R_binary/master/R-3.2.0-binaries-20150719-0018.tar.gz"
+R_BINARIES="https://www.dropbox.com/s/w0uyyitc50brfcu/R-3.2.0-binaries-20150719-0018.tar.gz?dl=1"
 
 VENDOR_DIR="$BUILD_DIR/vendor"
 CRAN_MIRROR="http://cran.revolutionanalytics.com"
@@ -81,7 +82,7 @@ echo "Vendoring R $R_VERSION ($BUILD_PACK_VERSION)" | indent
 
 # download and unpack binaries
 echo "Downloading and unpacking R binaries ($R_BINARIES)" | indent
-curl $R_BINARIES -s -o - | tar xzf - -C $BUILD_DIR
+curl -L $R_BINARIES -s -o - | tar xzf - -C $BUILD_DIR
 
 # checkig the downloaded folder structure
 # echo "printing the folder structure"
