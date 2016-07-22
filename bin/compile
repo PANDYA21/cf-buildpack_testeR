@@ -69,7 +69,8 @@ R_VERSION="3.2.0" #"3.2.1"
 BUILD_PACK_VERSION="20150719-0018" #"20151119-2338"
 
 # R_BINARIES="https://raw.githubusercontent.com/RAW21/R_binary/master/R-3.2.0-binaries-20150719-0018.tar.gz"
-R_BINARIES="https://www.dropbox.com/s/w0uyyitc50brfcu/R-3.2.0-binaries-20150719-0018.tar.gz?dl=1"
+# R_BINARIES="https://www.dropbox.com/s/w0uyyitc50brfcu/R-3.2.0-binaries-20150719-0018.tar.gz?dl=1"
+R_BINARIES="https://www.dropbox.com/s/rwxf8yxnbldxsc7/R-3.3.1-binaries-20160708-2028.tar.gz?dl=1"
 
 VENDOR_DIR="$BUILD_DIR/vendor"
 CRAN_MIRROR="http://cran.revolutionanalytics.com"
